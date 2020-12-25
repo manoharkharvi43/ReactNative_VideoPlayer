@@ -6,6 +6,7 @@ import {
 	FlatList,
 	Dimensions,
 	Pressable,
+	SafeAreaView,
 } from "react-native";
 import VIDEODATA from "../Components/videoData";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -33,11 +34,7 @@ const ListView = ({ name, videoURL }) => {
 //seperator
 
 const Seperator = () => {
-	return (
-		<View
-			style={{ backgroundColor: "#c9c9c9", height: 1}}
-		></View>
-	);
+	return <View style={{ backgroundColor: "#c9c9c9", height: 1 }}></View>;
 };
 
 export default function VideoLists({ navigation }) {
@@ -47,19 +44,21 @@ export default function VideoLists({ navigation }) {
 		});
 	};
 	return (
-		<View style={styles.container}>
-			<FlatList
-				data={VIDEODATA}
-				keyExtractor={(item) => item.id.toString()}
-				renderItem={({ item }) => (
-					<ListView
-						name={item.name}
-						videoURL={() => videoPlay(item.videourl)}
-					/>
-				)}
-				ItemSeparatorComponent={() => <Seperator />}
-			/>
-		</View>
+		<SafeAreaView>
+			<View style={styles.container}>
+				<FlatList
+					data={VIDEODATA}
+					keyExtractor={(item) => item.id.toString()}
+					renderItem={({ item }) => (
+						<ListView
+							name={item.name}
+							videoURL={() => videoPlay(item.videourl)}
+						/>
+					)}
+					ItemSeparatorComponent={() => <Seperator />}
+				/>
+			</View>
+		</SafeAreaView>
 	);
 }
 
@@ -72,16 +71,12 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		backgroundColor: "white",
 		flexDirection: "row",
-		// shadowColor: "#000",
-		// shadowOffset: { width: 0, height: 2 },
-		// shadowOpacity: 1,
-		// shadowRadius: 5,
-		// elevation: 10,
 		backgroundColor: "#ffffff",
 	},
 	container: {
 		backgroundColor: "#d8dde3",
 		width: width,
 		height: height,
+		elevation: 10,
 	},
 });
