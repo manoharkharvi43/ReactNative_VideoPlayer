@@ -1,13 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import VideoPlayer from './Components/VideoPlayer'
+import VideoLists from './Components/VideoLists'
+
+const stack = createStackNavigator()
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <stack.Navigator initialRouteName='videoLists'>
+        <stack.Screen name='videoLists' component={VideoLists}></stack.Screen>
+        <stack.Screen name='videoPlayer' component={VideoPlayer}></stack.Screen>
+      </stack.Navigator>
+    </NavigationContainer>
   );
 }
 
