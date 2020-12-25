@@ -1,0 +1,14 @@
+# ReactNative_VideoPlayer
+Video Player with React Native Expo .
+
+
+1. My favourite state management library for react is Redux.
+It's because in Redux , state is predictable and it is immutable.
+It can be maintained easily , testing and debugging also becomes very simpler.
+
+2. Some of the best React native practices are .
+a)Function name should be relevant ,So that it increases code readability. 
+b)Using Camel-Case for naming Convention.
+c)Maintaining good file structure.
+
+3. I would prefer DRY because , 
