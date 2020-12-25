@@ -1,5 +1,3 @@
-
-
 const DATA =[
     { id:1,
       name:'Video_01',

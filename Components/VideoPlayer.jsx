@@ -8,7 +8,6 @@ import { useRef } from "react";
 export default function VideoPlayer({ navigation, route }) {
 	const width = Dimensions.get("window").width;
     const height = Dimensions.get("window").height;
-    const [loading, setLoading] = useState(false); 
 	const { videourl } = route.params;
     const videoRef = useRef(null)
 	useEffect(() => {

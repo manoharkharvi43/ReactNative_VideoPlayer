@@ -8,10 +8,12 @@ import {
 	Pressable,
 } from "react-native";
 import VIDEODATA from "../Components/videoData";
-import { Entypo } from "@expo/vector-icons";
-import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
+
+//Single list view
 const ListView = ({ name, videoURL }) => {
 	const videoSelected = () => {
 		videoURL();
@@ -19,12 +21,22 @@ const ListView = ({ name, videoURL }) => {
 	return (
 		<Pressable onPress={videoSelected}>
 			<View style={styles.listview}>
-				<View style={{ marginRight: 20 }}>
-                <FontAwesome5 name="file-video" size={40} color="#2e2e2e" />
+				<View style={{ marginRight: 10 }}>
+					<MaterialCommunityIcons name="file-video" size={35} color="black" />
 				</View>
 				<Text style={{ fontSize: 20 }}>{name}</Text>
 			</View>
 		</Pressable>
+	);
+};
+
+//seperator
+
+const Seperator = () => {
+	return (
+		<View
+			style={{ backgroundColor: "#c9c9c9", height: 1}}
+		></View>
 	);
 };
 
@@ -45,6 +57,7 @@ export default function VideoLists({ navigation }) {
 						videoURL={() => videoPlay(item.videourl)}
 					/>
 				)}
+				ItemSeparatorComponent={() => <Seperator />}
 			/>
 		</View>
 	);
@@ -57,23 +70,18 @@ const styles = StyleSheet.create({
 		display: "flex",
 		justifyContent: "flex-start",
 		alignItems: "center",
-		marginBottom: 20,
 		backgroundColor: "white",
 		flexDirection: "row",
-		paddingLeft: 10,
-		shadowColor: "#000",
-		shadowOffset: { width: 0, height: 2 },
-		shadowOpacity: 1,
-		shadowRadius: 5,
-        elevation: 10,
-        marginBottom:height/55,
-        borderRadius:15,
-        backgroundColor:'#ffffff'
+		// shadowColor: "#000",
+		// shadowOffset: { width: 0, height: 2 },
+		// shadowOpacity: 1,
+		// shadowRadius: 5,
+		// elevation: 10,
+		backgroundColor: "#ffffff",
 	},
 	container: {
 		backgroundColor: "#d8dde3",
 		width: width,
-        height: height,
-       paddingTop:height/25
+		height: height,
 	},
 });
