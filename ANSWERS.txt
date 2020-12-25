@@ -11,4 +11,9 @@ a)Function name should be relevant ,So that it increases code readability.
 b)Using Camel-Case for naming Convention.
 c)Maintaining good file structure.
 
-3. I would prefer DRY because , 
+3. I would prefer DRY coding style because , code will be maintainable and easily understood by others who wil reuse that component.
+Repeatation of code will be minimized.
+
+4. It depends on the requirements and functionality that we want to implement in our app.But besides this, i would prefer Expo because,
+Project setup will become very easy and much faster. It becomes very easy to test your code  ie, just by scaning QR code.
+
