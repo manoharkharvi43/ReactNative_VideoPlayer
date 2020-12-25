@@ -15,5 +15,6 @@ c)Maintaining good file structure.
 Repeatation of code will be minimized.
 
 4. It depends on the requirements and functionality that we want to implement in our app.But besides this, i would prefer Expo because,
-Project setup will become very easy and much faster. It becomes very easy to test your code  ie, just by scaning QR code.
+Project setup will become very easy and much faster. It becomes very easy to test your code  ie, just by scaning QR code. Will face less 
+version errors while runing the application.
 
