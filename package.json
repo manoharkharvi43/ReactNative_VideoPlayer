@@ -24,7 +24,8 @@
     "react-native-screens": "~2.15.0",
     "react-native-video": "^5.1.0-alpha8",
     "react-native-web": "~0.13.12",
-    "expo-screen-orientation": "~2.1.0"
+    "expo-screen-orientation": "~2.1.0",
+    "expo-constants": "~9.3.3"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

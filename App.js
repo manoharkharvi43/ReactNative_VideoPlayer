@@ -13,15 +13,24 @@ export default function App() {
 		<NavigationContainer>
 			<StatusBar style="auto" />
 			<stack.Navigator initialRouteName="videoLists">
-				<stack.Screen name="videoLists" component={VideoLists} 	options={{
-            headerTitle:'Video Player'
-          }}></stack.Screen>
+				<stack.Screen
+					name="videoLists"
+					component={VideoLists}
+					options={{
+						headerTitle: "Video Player",
+						headerStyle: {
+							backgroundColor: "#0080ff",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
+				></stack.Screen>
 				<stack.Screen
 					name="videoPlayer"
 					component={VideoPlayer}
-					options={{
-            headerTitle:''
-          }}
+					options={{ headerShown: false }}
 				></stack.Screen>
 			</stack.Navigator>
 		</NavigationContainer>

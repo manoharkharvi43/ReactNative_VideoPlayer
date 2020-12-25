@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import VIDEODATA from "../Components/videoData";
 import { Entypo } from "@expo/vector-icons";
-
+import { FontAwesome5 } from '@expo/vector-icons';
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 const ListView = ({ name, videoURL }) => {
@@ -20,7 +20,7 @@ const ListView = ({ name, videoURL }) => {
 		<Pressable onPress={videoSelected}>
 			<View style={styles.listview}>
 				<View style={{ marginRight: 20 }}>
-					<Entypo name="video" size={50} color="black" />
+                <FontAwesome5 name="file-video" size={40} color="#2e2e2e" />
 				</View>
 				<Text style={{ fontSize: 20 }}>{name}</Text>
 			</View>
@@ -60,18 +60,20 @@ const styles = StyleSheet.create({
 		marginBottom: 20,
 		backgroundColor: "white",
 		flexDirection: "row",
-		borderRadius: 20,
 		paddingLeft: 10,
 		shadowColor: "#000",
 		shadowOffset: { width: 0, height: 2 },
 		shadowOpacity: 1,
 		shadowRadius: 5,
         elevation: 10,
-        marginTop:height/35
+        marginBottom:height/55,
+        borderRadius:15,
+        backgroundColor:'#ffffff'
 	},
 	container: {
-		backgroundColor: "#fafbfc",
+		backgroundColor: "#d8dde3",
 		width: width,
-		height: height,
+        height: height,
+       paddingTop:height/25
 	},
 });
