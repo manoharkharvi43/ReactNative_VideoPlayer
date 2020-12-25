@@ -17,7 +17,8 @@ export default function VideoPlayer({navigation,route }) {
 				shouldPlay={false}
                 isLooping={false}
                 usePoster 
-				useNativeControls
+                useNativeControls
+                onFullscreenUpdate
 				style={{
 					width: width,
 					height: 300,
