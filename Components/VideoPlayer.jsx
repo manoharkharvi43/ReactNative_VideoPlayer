@@ -1,46 +1,35 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, {  useState, useRef ,useEffect  } from "react";
 import {
 	StyleSheet,
 	Text,
 	View,
 	Dimensions,
 	ActivityIndicator,
+	LogBox
 } from "react-native";
 import { Video } from "expo-av";
-import * as ScreenOrientation from "expo-screen-orientation";
-import Constants from "expo-constants";
 
-export default function VideoPlayer({ navigation, route }) {
-	const [ismute, setIsMute] = useState(false);
-	const width = Dimensions.get("window").width;
-	const height = Dimensions.get("window").height;
-	const { videourl } = route.params;
+
+const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
+
+
+
+export default function VideoPlayer({ videourls ,id }) {
+
+
+	 useEffect(() =>{
+		LogBox.ignoreAllLogs();
+	 },[])
 	const videoRef = useRef(null);
-	useEffect(() => {
-		toLandscape();
-		return () => {
-			toPotrait();
-		};
-	}, []);
-
-	const toLandscape = async () => {
-		await ScreenOrientation.lockAsync(
-			ScreenOrientation.OrientationLock.LANDSCAPE
-		);
-	};
-	const toPotrait = async () => {
-		await ScreenOrientation.lockAsync(
-			ScreenOrientation.OrientationLock.PORTRAIT
-		);
-	};
 
 	return (
-		<View style={styles.videoContainer}>
+		<View style={styles.videoContainer} key={id}>
 			<View style={styles.loaderContainer}>
 				<ActivityIndicator size={60} color="dodgerblue" />
 			</View>
 			<Video
-				source={{ uri: videourl }}
+				source={{ uri: videourls }}
 				rate={1.0}
 				volume={1.0}
 				isMuted={false}
@@ -51,8 +40,8 @@ export default function VideoPlayer({ navigation, route }) {
 				ref={videoRef}
 				useNativeControls={true}
 				style={{
-					width: height / 1,
-					height: width / 1.1,
+					width: width/1.1,
+					height: height/3.2,
 				}}
 			/>
 		</View>
@@ -61,16 +50,28 @@ export default function VideoPlayer({ navigation, route }) {
 
 const styles = StyleSheet.create({
 	videoContainer: {
-		marginTop: Constants.statusBarHeight,
+		width: width/1.1,
+		height: height/3.2,
+		margin:0,
+		width: width/1.1,
+		height: height/3.2,
+		shadowColor: 'grey',
+		shadowOffset: { width: 2, height: 2 },
+		shadowOpacity: 0.1,
+		shadowRadius: 1.3,
+		elevation: 20,	
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
+		flexDirection:'column',
+		marginBottom:10,
+		backgroundColor:'black'
 	},
 	loaderContainer: {
 		position: "absolute",
 		left: 0,
 		right: 0,
-		top: 0,
+		top: height/9,
 		bottom: 0,
 	},
 });
