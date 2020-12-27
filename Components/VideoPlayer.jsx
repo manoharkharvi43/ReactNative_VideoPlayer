@@ -1,26 +1,21 @@
-import React, {  useState, useRef ,useEffect  } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
 	StyleSheet,
 	Text,
 	View,
 	Dimensions,
 	ActivityIndicator,
-	LogBox
+	LogBox,
 } from "react-native";
 import { Video } from "expo-av";
-
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-
-
-export default function VideoPlayer({ videourls ,id }) {
-
-
-	 useEffect(() =>{
+export default function VideoPlayer({ videourls, id }) {
+	useEffect(() => {
 		LogBox.ignoreAllLogs();
-	 },[])
+	}, []);
 	const videoRef = useRef(null);
 
 	return (
@@ -40,8 +35,8 @@ export default function VideoPlayer({ videourls ,id }) {
 				ref={videoRef}
 				useNativeControls={true}
 				style={{
-					width: width/1.1,
-					height: height/3.2,
+					width: width / 1.1,
+					height: height / 3.2,
 				}}
 			/>
 		</View>
@@ -50,28 +45,28 @@ export default function VideoPlayer({ videourls ,id }) {
 
 const styles = StyleSheet.create({
 	videoContainer: {
-		width: width/1.1,
-		height: height/3.2,
-		margin:0,
-		width: width/1.1,
-		height: height/3.2,
-		shadowColor: 'grey',
+		width: width / 1.1,
+		height: height / 3.2,
+		margin: 0,
+		width: width / 1.1,
+		height: height / 3.2,
+		shadowColor: "grey",
 		shadowOffset: { width: 2, height: 2 },
 		shadowOpacity: 0.1,
 		shadowRadius: 1.3,
-		elevation: 20,	
+		elevation: 20,
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		flexDirection:'column',
-		marginBottom:10,
-		backgroundColor:'black'
+		flexDirection: "column",
+		marginBottom: 10,
+		backgroundColor: "black",
 	},
 	loaderContainer: {
 		position: "absolute",
 		left: 0,
 		right: 0,
-		top: height/9,
+		top: height / 9,
 		bottom: 0,
 	},
 });
