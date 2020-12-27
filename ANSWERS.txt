@@ -18,3 +18,7 @@ Repeatation of code will be minimized.
 Project setup will become very easy and much faster. It becomes very easy to test your code  ie, just by scaning QR code. Will face less 
 version errors while runing the application.
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+THIS IS THE LINK TO DOWNLOAD THIS APPLICATION  : https://expo.io/artifacts/a5fde08c-053e-4763-b572-12029113eae7
