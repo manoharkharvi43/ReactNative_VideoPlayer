@@ -21,4 +21,4 @@ version errors while runing the application.
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-THIS IS THE LINK TO DOWNLOAD THIS APPLICATION  : https://expo.io/artifacts/a5fde08c-053e-4763-b572-12029113eae7
+THIS IS THE LINK TO DOWNLOAD THIS APPLICATION  :  https://expo.io/artifacts/32b75187-9a44-46da-a660-e5fec571228d
